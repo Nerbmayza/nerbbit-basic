@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on("ready", () => {
   console.log("I am ready!");
 });
-
+//client is basically the discord client so your bot! it'll be able t o what ever you code it to do!
 client.on("message", (message) => {
   if (message.content.startsWith("ping")) {
     message.channel.send("pong!");
@@ -52,15 +52,25 @@ client.on("message", (message) => {
 		message.channel.send({embed});
 		});
   }
-  if (message.content.startWith(prefix + "randomimage")) {
-	  number = 
+	// THIS IS A RANDOM IMAGE COMMAND It'll find the folder with the directory of what ever /randomimages is
+	// number is how many images you want stored
+	// MAKE SURE YOU HAVE ALL THE IMAGE FILES THE SAM FILE type or your bot will be confused!.
+ if (message.content.startsWith(prefix + "randomimage")) {
+	  number = 20;
+	  imagenumber = Math.floor (Math.random() * (number - 1 + 1)) + 1;
+	  message.channel.send ( {files: ["./randomimages/" + imagenumber + ".png"]})
+  }
+ })
  }
-  }) // this is a s
+  }) 
+  // the syntax's up top are errors but dont worry it'll be easy t o fix.
+  // this is a simple message responder it'll only respond to the word so make sure you add contains or includes or make a message array
+
 client.on("message", (message) => {
-	if (message.content.includes === "gay") {
+	if (message.content === "dumb") {
 		message.channel.send("STOP YOU ARE BULLYING https://cdn.discordapp.com/attachments/352417856081887233/500044303595470858/noot.gif");
 	}
 });
 
-
+// replace token with what ever your discord tokenis.
 client.login("TOKEN");
